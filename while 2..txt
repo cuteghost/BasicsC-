@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+/*Ispisati parne prirodne brojeve od 1 do 17*/
+int main()
+{
+	int broj = 0; // Deklaracija
+	while (broj < 17) // Provjera uslova da li je broj manji od 17, cim vrijednost varijable "broj" bude veca od 17 prekida petlju
+	{
+		cout << broj << endl; // ispisuje trenutnu vrijednost "broj" varijable(pvi put je to nula)
+		broj = broj + 2;	  // povecava vrijednost varijable broj za + 2
+	}
+	system("pause");
+	return 0;
+
+}

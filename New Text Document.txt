@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+/*omoguciti korisniku unos dva broja a zatim ispisati poruku koji je broj veci. 
+u slucaju da korisnik unese iste brojeve ispisati poruku da su unesena dva ista broja*/
+
+
+int main()
+{
+	int broj1, broj2;
+	cout << "Unesite dva broja: ";
+	cin >> broj1 >> broj2;
+	if (broj1 > broj2)
+	{
+		cout << "Prvi uneseni broj je veci od drugog: " << broj1 << "   " << broj2;
+	}
+	else if (broj2 > broj1)
+	{
+		cout << "Drugi uneseni broj je veci od prvog: " << broj2 << "   " << broj1;
+	}
+	else
+		cout << "Unijeli ste iste brojeve: " << broj1 << "  " << broj2;
+
+		system("pause>0");
+
+}

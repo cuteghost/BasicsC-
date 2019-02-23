@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int BrojDanaUMjesecu(int, int);
+int main()
+{
+	int mjesec, godina;
+A:  cout << "Unesi mjesec i godinu:\n";
+	cin >> mjesec >> godina;
+	if (mjesec > 12 || mjesec < 1)
+	{
+		system("cls");
+		cout << "Unesi ponovo ! ! !\n";
+		goto A;
+	}
+	cout << "Vas mjesec ima "<<BrojDanaUMjesecu(mjesec, godina) << " dana.";
+	system("pause>0");
+	return 0;
+}
+int BrojDanaUMjesecu(int mjesec, int godina)
+{
+	int broj_dana;
+	if (mjesec == 2)
+		broj_dana = 28 + (godina % 4 == 0);
+	else if(mjesec == 4 || mjesec == 6 || mjesec == 5 || mjesec == 9 || mjesec == 11)
+		broj_dana = 30;
+	else
+		broj_dana = 31;
+	return broj_dana;
+}

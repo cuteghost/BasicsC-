@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1486990812 source:c:\users\dzevad\desktop\pmam\main.cpp
+	<iostream>
+	<fstream>
+

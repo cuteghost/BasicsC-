@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+/*Zadatak: Poštujuci sve faze procesa programiranja napišite program u kojem cete omoguciti unos
+dva prirodna broja manja od 500 koji predstavljaju granice intervala,
+te pronaci i ispisati kojom znamenkom završava umnožak svih prostih brojeva u zadanom intervalu ukljucujuci granicne vrijednosti.
+Prost broj je broj koji je djeljiv samo s jedan i sa samim sobom i nema drugih djelitelja.
+Upotrijebite funkcije:
+bool prost (int);
+void unos (& int);
+*/
+bool prost(int);
+void unos(int&);
+
+int main()
+{
+	int br1, br2, proizvod=1;
+	
+	do
+	{
+		do
+		{
+			unos(br1);
+		} while (br1 < 0 || br1>500);
+		do
+		{
+			unos(br2);
+		} while (br2 < 0 || br2>500);
+	} while (br1 > br2);
+	for (int i = br1; i <= br2; i++)
+	{
+		if(prost(i))
+		{
+			proizvod *= i;
+		}
+
+	}
+	cout << proizvod << endl;
+
+	system("pause>0");
+}
+
+void unos(int & broj)
+{
+	cin >> broj;
+}
+bool prost(int broj)
+{
+	for (int i = 2; i < broj ; i++)
+	{
+		if (broj%i == 0)
+			return false;
+	}
+	return true;
+}
+

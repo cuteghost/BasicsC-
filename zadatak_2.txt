@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int brojac = 0, karakteri = 0, malo_slovo = 0, veliko_slovo = 0;
+	char karakter;
+
+	cout << "Unesite deset karaktera ->\n";
+	do
+	{
+		cin >> karakter;
+		if (karakter >= 'a' && karakter <= 'z')
+			malo_slovo++;
+		else if(karakter >= 'A'&&karakter <= 'Z')
+			veliko_slovo++;
+		else
+			karakteri++;
+		brojac++;
+	} while (brojac<10);
+
+	cout << "Unijeli ste -> " << malo_slovo << " malih slova, " << veliko_slovo << " velikih slova i " << karakteri << " karaktera\n";
+
+	system("pause>0");
+	return 0;
+}

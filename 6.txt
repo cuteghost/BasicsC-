@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+/*Zadatak: Napišite program, poštujuci sve faze procesa programiranja,  kojem cete omoguciti unos dva prirodna broja.
+Provjerite cine li uneseni brojevi prijateljski par.
+Prirodni brojevi a i b cine prijateljski par brojeva 
+ako je zbir pravih djelitelja broja a (onih koji su manji od a) jednak broju b i istovremeno zbir pravih djelitelja broja b jednak je broju a.
+Npr. Brojevi 220 i 284 su prijateljski brojevi.
+Pravi djelitelji broja 220 su: 1, 2, 4, 5, 10, 11, 20, 22, 55, 110  , a njihova suma iznosi 284;
+Pravi djelitelji broja 284 su: 1, 2, 4, 71,  142 a njihova suma iznosi 220.
+
+Upotrijebite funkcije:
+int suma_pravih_djelitelja (int);
+bool provjera (int, int);
+*/
+
+int suma_pravih_djeljitelja(int);
+bool provjera(int, int);
+
+int main()
+{
+	int br1, br2;
+	cout << "Unesite dva broja\n";
+	cin >> br1 >> br2;
+	(provjera(br1, br2) == true) ? cout << "Brojevi " << br1 << " i " << br2 << " su prijateljski\n" : cout << "Brojevi nisu prijateljski";
+	system("pause>0");
+}
+int suma_pravih_djeljitelja(int broj)
+{
+	int rez = 0;
+	for (int i = 1; i <broj; i++)
+	{
+		if (broj%i == 0)
+			rez += i;
+	}
+	return rez;
+}
+bool provjera(int br1,int br2)
+{
+	if ((suma_pravih_djeljitelja(br1)) == br2 && (suma_pravih_djeljitelja(br2))== br1)
+		return true;
+	else
+		return false;
+}

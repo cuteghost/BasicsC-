@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1485621522 source:c:\users\dzevad\desktop\c++\trening\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<fstream>
+	<sstream>
+

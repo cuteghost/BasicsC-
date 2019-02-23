@@ -1,0 +1,131 @@
+#include <iostream>
+using namespace std;
+
+const int red = 5, kolona = 4;
+
+bool provjera(int niz[][kolona],int x, int i)
+{
+	if (niz[x][i] == 0)
+		return true;
+	else
+		return false;
+}
+bool rezervisi(int niz[][kolona])
+{
+	char odabir;
+	cout << "Da li zelite mjesto do prozora y/n :";
+	do
+	{
+		cin >> odabir;
+	} while (odabir!='y'&&odabir != 'n');
+	if (odabir == 'y')
+	{
+		for (int i = 0; i < red; i++)
+		{
+			if (provjera(niz, 0, i)==true)
+			{
+				niz[i][0] = 1;
+				cout << "Uspjesno ste rezervisali\n";
+				return true;
+				
+			}
+			else if(provjera(niz, 3, i)==true)
+			{
+				niz[i][3] = 1;
+				cout << "Uspjesno ste rezervisali\n";
+				return true;
+			}
+		}
+		cout << "Sva mjesta do prozora su zauzeta\n";
+		return false;
+		
+	}
+	else if (odabir == 'n')
+	{
+		for (int i = 0; i < red; i++)
+		{
+			if (provjera(niz, 1, i) == true)
+			{
+				niz[i][1] = 1;
+				cout << "Uspjesno ste rezervisali\n";
+				return true;
+			}
+			else if (provjera(niz, 2, i) == true)
+			{
+				niz[i][2] = 1;
+				cout << "Uspjesno ste rezervisali\n";
+				return true;
+			}
+		}
+		cout << "Sva mjesta do prolaza su zauzeta\n";
+		return false;
+	}
+}
+bool otkazi(int niz[][kolona], int x, int y)
+{
+	char odabir;
+	cout << "Da li zelite otkazati y/n :";
+	do
+	{
+		cin >> odabir;
+	} while (odabir != 'y'&&odabir != 'n');
+	if (odabir == 'y')
+	{
+		if (provjera(niz, x, y) == false)
+		{
+			cout << "Uspjesno ste otkazali rezervaciju\n";
+			niz[x][y] = 0;
+			return true;
+		}
+		else if (provjera(niz, x, y) == true)
+		{
+			cout << "Mjesto nije ni rezervisano\n";
+			return false;
+		}
+	}
+}
+void ispis(int niz[][kolona])
+{
+	for (int i = 0; i < red; i++)
+	{
+		for (int j = 0; j < kolona; j++)
+		{
+			cout << niz[i][j];
+		}
+		cout << endl;
+	}
+}
+
+int main()
+{
+	int autobus[red][kolona] = { 0 }, izbor;
+	bool exit = false;
+	do
+	{
+		cin >> izbor;
+		switch (izbor)
+		{
+		case 1:
+			rezervisi(autobus);
+			break;
+		case 2:
+			int x, y;
+			do
+			{
+				cout << "Unesite mjesto koje zelite otkazati\n";
+				cin >> x >> y;
+			} while (x>4||y>5|| x<0 || y<0);
+			otkazi(autobus, x, y);
+			break;
+		case 3:
+			ispis(autobus);
+			break;
+		case 4:
+			exit = true;
+			break;
+		default:
+			break;
+		}
+
+	} while (exit==false);
+}

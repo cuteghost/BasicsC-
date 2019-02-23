@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+/*Zadatak: Napišite program, poštujuci sve faze procesa programiranja, u kojem cete unijeti jedan prirodan broj koji predstavlja vrijeme u minutama, 
+a izracunati i ispisati koliko je to vremena u danima, satima i  minutama.
+Upotrijebite funkcije:
+int sati (int &);
+int dani (int &);
+Npr, ako korisnik unese 1520 minute program treba ispisati da je to 1 dan 1 sat i 20 minuta. (1sat =60 minuta; 1 dan=24 sata=1440 minuta)
+*/
+int sati(int &);
+int dani(int &);
+int main()
+{
+	int min;
+	cout << "Unesite vrijeme  u minutama -> "; cin >> min;
+	cout << "Vase minute imaju " << dani(min) ;
+	cout << " dana " << sati(min); 
+	cout << " sati i " << min << " minuta";
+	
+	system("pause>0");
+
+}
+int dani(int & ness)
+{
+	int dan = ness / 1440;
+	ness-= (dan*1440);
+	return dan;
+}
+int sati(int& ness)
+{
+	int sat = ness / 60;
+	ness -= (sat * 60);
+	return sat;
+}

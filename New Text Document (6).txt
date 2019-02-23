@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	float masa, visina, BMI, p_masa;
+	cout << "Unesi te vasu tjelesnu masu i visinu => ";
+	cin >> masa >> visina;
+	BMI = masa / (visina*visina);
+	p_masa = (20*(visina*visina)) - masa;
+	cout << BMI << endl;
+	if (BMI >= 20 && BMI <= 25)
+	{
+		cout << "Okej si";
+
+	}
+	else if (BMI < 20)
+	{
+		cout << "Trebas se udebljat =>" << p_masa << "kg";
+	}
+	system("pause>0");
+}

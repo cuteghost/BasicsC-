@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+/*Napisi proram koji ce ispisat sredju cifru bilo kojeg broja. "NAPOMENA BRPJ MORA IMATI NEPARAN BRJ CIFRI"*/
+
+int broj_cifri(int broj)
+{
+	int brojac = 0;
+	while (broj > 0)
+	{
+		broj /= 10;
+		brojac++;
+	}
+	return brojac;
+}
+
+int main()
+{
+	int broj, brojac = 0, srednja_c;;
+	cout << "Unesite neki broj: ";
+	cin >> broj;
+	if (broj_cifri(broj) % 2 != 0)
+	{
+		while (brojac < broj_cifri(broj) / 2 + 1)
+		{
+			broj /= 10;
+			brojac++;
+			srednja_c = broj % 10;
+		}
+		cout << srednja_c;
+	}
+		system("pause>0");
+
+}

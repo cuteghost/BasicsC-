@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+
+/*Napraviti program koji ce simulirati kalkulator. 
+1.	Omoguciti korisniku da unese dva broja
+2.	Omoguciti korisniku da unese znak matematicke operacije ("+", "-", "*", "/" i "%")
+3.  Omoguciti korisniku da vrsi kalkulacije dok god to on zeli
+4.  Omoguciti korisniku da, u slucaju da pogrijesi prilikom unosa znaka operacije, ponovo unese taj znak
+5. U ovisnosti znaka operacije ("+", "-", "*", "/" i "%") koji je korisnik odabrao, izvrsiti matematiku operaciju 
+*/
+int main()
+{
+	float a, b;
+	char izbor;
+	char znak;
+
+	while (true)
+	{
+		cout << "Kalkulacija [y/n]";
+		do
+		{
+			cin >> izbor;
+		} while (izbor != 'n' && izbor != 'y');
+		if (izbor == 'n')
+			break;
+		cout << "Unesite dva broja: " << endl;
+		cin >> a >> b;
+
+		cout << "Unesite operaciju: " << endl;
+		do
+		{
+			cin >> znak;
+		} while (znak != '+' && znak != '-' && znak != '*' && znak != '/' && znak != '%');
+
+		float rezultat;
+		if (znak == '+'){
+			rezultat = a + b;
+	    }
+		else if (znak == '-'){
+			rezultat = a - b;
+	    }
+		else if (znak == '*'){
+			rezultat = a*b;
+	    }
+		else if (znak == '/'){
+			rezultat = a / b
+	    }
+		else if (znak == '%')
+		{
+			rezultat int(a) % int(b)
+		}
+		cout << rezultat << endl;
+
+	}
+	system("pause>0");
+	return 0;
+}

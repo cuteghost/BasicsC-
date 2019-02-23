@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1487676877 source:c:\users\dzevad\desktop\bankomat\main.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+
+1487678689 source:c:\users\dzevad\desktop\c++\bankomat\main.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+

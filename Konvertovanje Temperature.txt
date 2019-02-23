@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std; 
+/*program za konvertiranje temperature izražene u stupnjevima
+Celzijusa u temperaturu izraženu u stupnjevima Fahrenheita*/
+
+int main()
+{
+	float temperaturaCel, temperaturaFar;		//Deklaracija varijabli koje tipa float tj primaju decimalne vijednosti(broj sa zarezom)
+	cout << "Unesite temperaturu u celzijusima";//Ispis korisniku programa da unese temperaturu
+	cin >> temperaturaCel;						//Ova linija koda omogucuje korisniku da dodijeli vrijednost "temperaturaCel"
+	temperaturaFar= 9 * temperaturaCel / 5 + 32;//pretvaranje celzijusa u fahrenheit, 
+												//zapravo ova linija koda izracuna prvo sa desne strane 
+												//a zatim taj rezultat doda varijabli"temperaturaFah"
+	cout << "Vasa tempertura u celzijusima je ==> " << temperaturaCel << " izrazena u farenheitima je ==> " << temperaturaFar;
+	//Linija iznad sluzi za ispis, prvo ispise "Vasa tempertura u celzijusima je ==>" zatim ispise vrijednost temperaturaCel varijable
+	//nakon toga ispisuje " izrazena u farenheitima je ==> " i na kraju vrijednost varijable temperaturaFar
+	return 0;
+}

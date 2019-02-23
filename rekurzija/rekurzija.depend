@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1487254224 source:c:\users\dzevad\desktop\rekurzija\main.cpp
+	<iostream>
+	<cstdlib>
+	<string.h>
+	<algorithm>
+	<ctime>
+

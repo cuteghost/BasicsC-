@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1490922231 source:c:\users\dzevad\desktop\c++\filter\main.cpp
+	<iostream>
+	<string>
+	<cstring>
+

@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+/*Zadatak: Napišite program, poštujuci sve faze procesa programiranja,  
+koji omogucava da se ispišu svi brojevi koji zadovoljavaju uvjet da im je zapis jednak zapisu posljednjih znamenki njihovog kvadrata. 
+(Npr. 6"2=36, 25"2=625 …) Provjeru vršiti za prvih 150 prirodnih brojeva.
+Upotrijebite funkciju:
+bool provjera (int);
+*/
+
+bool provjera(int);
+
+int main()
+{
+	for (int i = 1; i <=150; i++)
+	{
+		if (provjera(i))
+			cout << "Broj " << i << " je zadovoljio uvjet\n";
+	}
+	system("pause>0");
+}
+bool provjera(int broj)
+{
+	int uvjetni = pow(broj, 2), temp;
+	for (int i = 0; broj>0; i++)
+	{
+		temp = broj % 10;
+		if (uvjetni % 10 != temp)
+			return false;
+		broj /= 10;
+		uvjetni /= 10;
+	}
+	return true;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+/*Omoguciti korisniku da unese broj, ako je broj veci od 100 traziti od korisnika da ponovo unese broj*/
+int main()
+
+{
+	int broj;
+	cout << "Unesite broj manji od 100 -> ";
+	cin >> broj;
+	while (broj>100) // while petlja ce se izvrsavat dok god je uslvo validan. 
+			 // u ovom slucaju je to dok god unosimo broj koji je veci od 100
+	{
+		system("cls"); // komanda koja brise sadrzaj konzole
+		cout << "Unesite broj manji od 100\n"; // ispisuje korisniku poruku da ponovo unese broj
+		cin >> broj; // omogucuje korisniku da ponovo unese vrijednost u varijablu "broj"
+	
+		// linije koda iznad ce se izvrsavati sve dok god unosimo broj koji je veci od 100
+	}
+	system("pause");
+	return 0;
+}

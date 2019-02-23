@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1490836199 source:c:\users\dzevad\desktop\rijeci\rijeci\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+	<map>
+

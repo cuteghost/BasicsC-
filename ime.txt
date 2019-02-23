@@ -1,0 +1,17 @@
+
+
+#include <iostream>
+/*Omoguciti korisniku da unese 5 karatkera(koji predstavljaju ime) 
+  a zatim to ime ispisati unazad*/
+using namespace std;
+int main()
+{
+	char s1, s2, s3, s4, s5;//Kreiramo pet varijabli tipa char, odabrano ime NAILA ima 5 karaktera(slova)
+	cout << "Unesite svoje ime slovo po slovo:\n";//Ispisujemo korisniku poruku sta je potrebno uradit
+	cin >> s1 >> s2 >> s3 >> s4 >> s5;//Omogucujemo da korisnik dodijeli vrijednosti svakoj od varijabli koje smo deklarisali 
+	cout << "Vase ime napisano obrnutim redoslijedom je ==>" //ova linija koda nam ispisuje prvo poruku "Vase ime napisano obrnutim redoslijedom je ==>"
+		 << s5 << s4 << s3 << s2 << s1 << endl;		// a zatim ispisuje vrijednost navedenih varijabli tipa char koje smo prethodno deklarisali 
+								//i dodijelili vrijednost tj izvrsili inicijalizaciju
+	system("pause>0");
+	return 0;
+}

@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int broj1, broj2, broj3;
+	cout << "Unesite tri cjela broja =>";
+	cin >> broj1 >> broj2 >> broj3;
+	if (broj1 > broj2 && broj1 > broj3)
+	{
+		cout << "Ovo je vas najveci broj"<<broj1<<endl;
+	}
+	else if (broj2 > broj1 && broj2 > broj3)
+	{
+		cout << "Ovo je vas najveci broj" << broj2 << endl;
+	}
+	else if(broj3>broj1 && broj3>broj2)
+	{
+		cout << "Ovo je vas najveci broj" << broj3 << endl;
+	}
+	else
+	{
+		cout << "Unijeli ste jednake brojeve";
+	}
+	system("pause>0");
+
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	char karakter;
+	cout << "Unesite jedan karakter: ";
+	cin >> karakter;
+
+	if (karakter >= '0' && karakter <='9')
+	{
+		cout << "Karakter koji ste unijeli je broj: " << karakter;
+	}
+	else
+	{
+		cout << "Uneseni karakter nije broj: " << karakter;
+	}
+		system("pause>0");
+
+}

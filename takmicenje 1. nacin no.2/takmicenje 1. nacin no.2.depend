@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1489068777 source:c:\users\dzevad\desktop\takmicenje 1. nacin no.2\main.cpp
+	<iostream>
+	<fstream>
+	<cmath>
+

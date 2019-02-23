@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+/* Zadatak: Napišite program, , poštujuci sve faze procesa programiranja, koji omogucava unos prirodnog broja n preko tastature te izracunava sumu: 
+
+S= 1!/(1/2) + 2!/(1/2+1/3) + ….+n!/(1/2+1/(3 )+?+1/n) 
+Upotrijebite funkcije:
+int faktor (int); 
+void suma(int, float &);
+float ukupnasuma(int);
+Unos prirodnog broja i ispis ukupne sume vršiti u funkciji main.
+*/
+int faktorijel(int);
+void suma(int, float &);
+float ukupnasuma(int);
+
+int main()
+{
+	int n;
+	cout << "Unesite broj ---> "; cin >> n;
+	cout << "Rezultat je ---> " << ukupnasuma(n) << endl;
+	system("pause>0");
+
+}
+int faktorijel(int broj)
+{
+	int rez = 1;
+	for (int i = 1; i <=broj; i++)
+	{
+		rez *= i;
+	}
+	return rez;
+}
+
+float ukupnasuma(int broj)
+{
+	float rezultat = 0, sumare = 0;
+
+	for (int i = 1; i <=broj; i++)
+	{
+		suma(i, sumare);
+		rezultat += (float)(faktorijel(i)) / sumare;
+	}
+	return rezultat;
+}
+void suma(int broj, float & nesto)
+{
+		nesto += ((float)1 / (float)(broj+1));	
+}

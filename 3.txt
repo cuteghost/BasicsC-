@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+/*Zadatak: Napisati program koji korisniku omogucava unos realnog broja x, 
+cijelog broja m (m>0) i odabir funkcije za proracun datog izraza.
+Korisnik bira funkciju unosom jednog od sljedecih karaktera: 's' (sabiranje), 'o' (oduzimanje), 'm' (množene) i 'd' (dijeljenje).
+U slucaju da korisnik unese karakter koji ne odgovara niti jednoj od redefiniranih vrijednosti ispisati odgovarajucu poruku i ponoviti odabir.
+Za odabranu funkciju s izraz je:
+ f(x,m)=(x-1)*1+(x-2)*2+?+(x-m)*m
+Za odabranu funkciju o izraz je:
+ f(x,m)=(x-1)*1-(x-2)*2-…-(x-m)*m
+itd.
+Broj faktora u izrazu odgovara unesenom broju m. U rješenju obavezno iskoristiti switch iskaz,
+a za svaku od operacija (sabiranje, oduzimanje, množenje i dijeljenje) kreirati zasebnu funkciju.
+*/
+
+double sabiranje(int m, float x)
+{
+	double suma = 0;
+	for (int i = 1; i <=m ; i++)
+	{
+		suma += (x - i)*i;
+	}
+	return suma;
+}
+double oduzimanje(int m, float x)
+{
+	double rezultat = 0;
+	for (int i = 1; i <=m; i++)
+	{
+		rezultat -= (x - i)*i;
+	}
+	return rezultat;
+}
+double djeljenje(int m, float x)
+{
+	double rezultat = 1;
+	for (int i = 1; i <= m; i++)
+	{
+		rezultat /= (x - i)*i;
+	}
+	return rezultat;
+}
+double mnozenje(int m, float x)
+{
+	double rezultat = 1;
+	for (int i = 1; i <= m; i++)
+	{
+		rezultat *= (x - i)*i;
+	}
+	return rezultat;
+}
+int main()
+{
+	float x; int m;
+	char odabir;
+	do
+	{
+		cout << "Unesite jedan realan i jedan cijeli broj veci od 0\n";
+		cin >> x;
+		cin >> m;
+	} while (m<=0);
+	system("cls");
+	do
+	{
+		cout << "unesite odabir\n";
+		cin >> odabir;
+	} while (odabir!='s'&& odabir != 'm' && odabir != 'd' && odabir != 'o' );
+	
+	switch (odabir)
+	{
+	case 's':
+		cout << "Rezultat funkcije je -> " << sabiranje(m,x) ;
+		break;
+	case 'o':
+		cout << "Rezultat funkcije je -> " << oduzimanje(m,x);
+		break;
+	case 'd':
+		cout << "Rezultat funkcije je -> " << djeljenje(m,x);
+		break;
+	case 'm':
+		cout << "Rezultat funkcije je -> " << mnozenje(m,x);
+		break;
+	default:
+		break;
+	}
+	system("pause>0");
+}

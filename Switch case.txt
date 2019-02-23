@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+/*Napraviti program koji ce omoguciti korisniku da unese broj a zatim ispise koji je to mjesec i koje godisnje doba. 
+Broj ne smije biti manji od jedan i veci od 12
+*/
+int main()
+{
+	int broj;			//Deklarisemo varijablu pod nazivom "broj"
+	cout << "Unesite mjesec: ";
+	cin >> broj;			//omogucujemo korisniku unos vrijednosti za varijablu "broj"
+	if (broj < 1 && broj>12)	// Provjeravamo da li je broj manji od 1 ili veci od 12  
+		return 0;		// ako je uslov ispunjen onda prekidamo program
+
+	switch (broj)			//switch sa uslovom koji je broj unesen
+	{
+	case 1:				//zavisno od toga koji je broj unesen izvrsit ce se "case" npr. u slucaju da unesemo 1 
+					//ispisat ce se Januar
+		cout << "Januar\n" << "Zima\";
+		break;			// break prekida switch i izlazi iz petlje. U ovom slucaju da nismo stavili 
+					// break izvrsili bi se svi slucajevi tj. dok ne naidje na "break" izvrsavao bi se kod
+	case 2:
+		cout << "Februar\n";
+		break;
+	case 3:
+		cout << "Mart\n";
+		break;
+	case 4:
+		cout << "April\n";
+		break;
+	case 5:
+		cout << "Maj\n";
+		break;
+	case 6:
+		cout << " Juni\n";
+		break;
+	case 7:
+		cout << " Juli\n";
+		break;
+	case 8:
+		cout << " August\n";
+		break;
+	case 9:
+		cout << "Septembar\n";
+		break;
+	case 10:
+		cout << "Oktobar\n";
+		break;
+	case 11:
+		cout << " Novembar\n";
+		break;
+	case 12:
+		cout << " Decembar\n";
+		break;
+	default:
+		break;
+	}
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,37 @@
+﻿#include <iostream>
+
+using namespace std;
+/*omoguciti korisniku unos ocjena iz pet predmeta a zatim ispisati prosjek. 
+  ocjene koje se mogu koristiti su od 5 do 10. ako korisnik unese ne pravilan broj ispisati mu gresku*/
+int main() 
+{
+	int ocjena1, ocjena2, ocjena3, ocjena4, ocjena5;//Kreiramo varijable u koje cemo da smjestimo ocjene
+	float prosjek;					//Kreiramo sada varijablu prosjek koja ce primati float tipove podataka. zasto smo stavili da je prosjek float,
+							//posto je prosjek rezultat koji dobivamo tako sto sumu "ocjena" dijelimo, moguce je da je prosjek neki decimalni broj
+							//int tip podataka ne moze primiti rezultat dijeljenja koji je decimalan broj
+	
+	cout << "Unesite ocjene \n";			//Ispisuje poruku korisniku da unese vrijednosti ocjena
+	cin >> ocjena1 >> ocjena2 >> ocjena3 >> ocjena4 >> ocjena5;	//omogucujemo dodjelu vrijednosti ovim ocjenama
+	if ( ocjena1>10 || ocjena1<5 ||  ocjena2<5 || ocjena2>10 ||  ocjena3<5 ||  ocjena3>10 || ocjena4<5 || ocjena4>10 || ocjena5<5 || ocjena5>10)
+	// if, ili tako zvana if petlja provjerava da li je korisnik unio neispravan broj, tj da li je neki od brojeva manji od pet ili veci od deset
+	// u slucaju da je makar jedan broj pogresan ulazi u velike zagrade ispod i vrsi kod koji se nalazi u njima 
+	{
+					// U slucaju da je uslov u malim "if" zagradama ispunjen izvrsit ce se dio koda u ovim velikim zagradama "{}"
+		cout << "Greska\n";	// u ovom slucaju kako je u zadataku pojasnjeno ako korisnik unese jedan broj da je manji od 5 a veci od 10
+					// izvrsit ce se "cout" naredba koja ce ispisat korisniku "Greska"
+					
+	}
+	// Linija koda ispod je nastavak "if"-a a zapravo znaci da u slucaju gore uslov nije ispunjen onda radi ono sto je u else
+	// tj ako su svi brojevi koje je korisnik unio ispravni tj svaki od njih je veci od 5 a manji od deset tada ce se izvrsiti sledeci dio koda 
+	else
+	{
+		prosjek = (float)((ocjena1 + ocjena2 + ocjena3 + ocjena4 + ocjena5)) / 5; // ova linija koda racuna prosjek na nacin da sabere sve ocjene 
+											 //a zatim sa casting opeatorom"(float)" pretvori taj zbir koji je int u float tip podataka
+											// i na kraju podijeli sa brojem ocjena. rezultat ce biti !! decimalni broj !! 
+		
+		cout << "vas prosjek ocjena je =>" << prosjek;				//ispisuje poruku "vas prosjek ocjena je ==>" a zatim i vrijednost varijable prosjek ocjena.
+	}
+	system("pause>0");
+	return 0;
+
+}

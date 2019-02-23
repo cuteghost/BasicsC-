@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+/*Zadatak: Napišite program, poštujuci sve faze procesa programiranja, u kojem cete omoguciti unos prirodnog broja. 
+Provjerite je li broj trivijalan (prost) uz pomoc funkcije:
+•	bool trivijalan (int); 
+u slucaju da broj nije trivijalan (prost) odredite i ispište sve njegove djelitelje uz pomoc funkcije:
+•	void djelitelji(int);
+
+Broj je trivijalan (prost) ako je djeljiv SAMO sa jedan i sa samim sobom.
+*/
+
+bool prost(int);
+void djeljitelji(int);
+
+int main()
+{
+	for (int i = 1; i <=150 ; i++)
+	{
+		(prost(i)) ? cout << "Broj " << i << " je prost\n\n\n" : djeljitelji(i);
+	}
+
+	system("pause>0");
+}
+bool prost(int broj)
+{
+	for (int i = 2; i <broj; i++)
+	{
+		if (broj%i == 0)
+			return false;
+	}
+	return true;
+}
+
+void djeljitelji(int broj)
+{
+	cout << "Djeljitelji broja " << broj << " su\n";
+	for (int i = 2; i < broj; i++)
+	{
+		if (broj%i == 0)
+		{
+			cout << "---> "<<i << " <---"<< endl;
+		}
+	}
+	cout << endl << endl;
+}

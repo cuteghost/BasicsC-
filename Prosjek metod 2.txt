@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+/*omoguciti korisniku unos ocjena iz pet predmeta a zatim ispisati prosjek.
+ocjene koje se mogu koristiti su od 5 do 10. ako korisnik unese ne pravilan broj ispisati mu gresku
+a ako je svaka ocjena pogresna ispisati sve ocjene su vam pogresne*/
+int main()
+{
+	int ocjena1, ocjena2, ocjena3, ocjena4, ocjena5;
+	float prosjek;
+	cout << "Unesite ocjene \n";
+	cin >> ocjena1 >> ocjena2 >> ocjena3 >> ocjena4 >> ocjena5;
+	
+	//isti zadatak kao "prosjek" samo sto je dodato da provjeri da li su sve ocjene pogresne ili je makar jedna pogresna ili da nije ni jedna
+	if ((ocjena1 > 10 || ocjena1 < 5) && (ocjena2 < 5 || ocjena2>10) && (ocjena3 < 5 || ocjena3>10)
+	   && (ocjena4 < 5 || ocjena4>10) && (ocjena5 < 5 || ocjena5>10))
+	// "if" iznad je jedini novi dio u odnosu na zadatak "prosjek". Koliko je vidljivo iz koda u glavnoj "if" zagradi nalazi se jos 5 malih zagrada
+	// i u njima "||" (logicko "ili"). U tim malim zagradama provjeravamo da li je makar jedan od brojeva pogresan tj. da li je veci od 10 ili manji od 5
+	// izmedju malih zagrada se nalazi "&&" (logicko "i"). na Ovaj nacin prvo se provjeri u malim zagradama da li je broj pogrsan a zatim sa
+	// logicko i da li su svi brojevi pogresni. Ovaj if ce se izvrsit ako su svi brojevi pogresni tj ako su svi uvjeti u zagradama ispunjeni 	
+
+
+	{
+		cout << "Svaka ocjena vam je pogresna\n"; // u slucaju da je uvjet ispostovan tada ce se se izvrsiti ova linija koda
+	}
+	
+	// Ovaj uslov smo imali vec prije, u zadataku "prosjek", a jedina razlika je ta sto smo sada dodali else ispred if-a, 
+	// tj nece se ispisat "Greska" ako je prethodni if izvrsen i ako uslov koji smo postavili ispod u malim zagradama nije zadovoljen
+	// tada preskace i ovaj "else if" i izvrsava "else"  
+	else if (ocjena1 > 10 || ocjena1 < 5 || ocjena2 < 5 || ocjena2>10 || ocjena3 < 5 
+		|| ocjena3>10 || ocjena4 < 5 || ocjena4>10 || ocjena5 < 5 || ocjena5>10)
+	{
+		cout << "Greska\n";
+	}
+	else
+	{
+		prosjek = (float)((ocjena1 + ocjena2 + ocjena3 + ocjena4 + ocjena5)) / 5;
+		cout << "vas prosjek ocjena je =>" << prosjek;
+	}
+	system("pause>0");
+	return 0;
+
+}

@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+int Obrnuti(int);
+int SumirajSvakuDruguCifru(int);
+int BrojCifri(int);
+int main()
+{
+	int broj;
+	do
+	{
+		cout << "unesite broj veci od 9 -> ";
+		cin >> broj;
+		system("cls");
+	} while (broj < 10);
+
+	cout << "vas broj obrnutim redoslijedom je -> " << Obrnuti(broj) << endl
+		 << "Suma svake druge cifre s desna je -> " << SumirajSvakuDruguCifru(broj) << endl;
+	system("pause>0");
+	return 0;
+}
+
+int BrojCifri(int broj)
+{
+	int brojac = 0;
+	while (broj > 0)
+	{
+		broj /= 10;
+		brojac++;
+	}
+	return brojac;
+}
+int Obrnuti(int broj)
+{
+	int obrnuto = 0, temp, brojac=BrojCifri(broj);
+	while (broj>0)
+	{
+		brojac--;
+		temp = broj % 10;
+		obrnuto += temp*pow(10, brojac);
+		broj /= 10;
+	}
+	return obrnuto;
+}
+
+int SumirajSvakuDruguCifru(int broj)
+{
+	int brojac = BrojCifri(broj), suma = 0;
+	while (brojac % 2 != 0)
+	{
+		broj /= 10;
+		brojac--;
+	}
+
+	while (broj>0)
+	{
+		if (brojac % 2 == 0)
+			suma += broj % 10;
+		brojac--;
+		broj /= 10;
+	}
+	return suma;
+}

@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+/*Napisati program koji omogucava unos pozitivnog broja n te pronalazi njegove parne cifri i formira novi broj u kojem su parne cifra zamijenjena cifrom '5'.
+Dodatno program treba ispisati razliku unesenog i broja koji se dobije nakon zamjene najmanje cifre..
+Upotrijebiti funkcije:
+void unos (& int);
+int zamjena (int);
+*/
+
+void unos(int&);
+int zamjena(int);
+
+int main()
+{
+	int broj;
+	do
+	{
+		unos(broj);
+
+	} while (broj <=0);
+
+	cout << "Razlika unesenog broja " << broj << " i novo dobivenog " << zamjena(broj) << " je -> " << broj - zamjena(broj);
+	system("pause>0");
+}
+
+void unos(int & broj)
+{
+	cin >> broj;
+}
+
+int zamjena(int broj)
+{
+	int novi = 0, temp;
+	for (int i = 0; broj > 0; i++)
+	{
+		temp = broj % 10;
+		if (temp % 2 == 0)
+			temp = 1;
+		novi += temp*pow(10, i);
+		broj /= 10;
+	}
+	return novi;
+}

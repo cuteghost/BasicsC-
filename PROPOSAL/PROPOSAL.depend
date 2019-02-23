@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1492585959 source:c:\users\dzevad\desktop\c++\proposal\main.cpp
+	<iostream>
+	<cmath>
+	<windows.h>
+	<mmsystem.h>
+	<cstdlib>
+	<iomanip>
+	<stdlib.h>
+

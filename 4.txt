@@ -1,0 +1,47 @@
+#include <iostream>
+
+/*Zadatak: Napišite program, poštujuci sve faze procesa programiranja, 
+koji ce ispisati sve troznamenkaste brojeve koji su jednaki sumi faktorijela svojih znamenki – ABC=A!+B!+C!
+Upotrijebite funkcije:
+•	bool provjera (int);
+•	int faktorijel(int);
+*/
+
+using namespace std;
+
+int faktorijel(int);
+bool provjera(int);
+
+int main()
+{
+	for (int i = 100; i <= 999; i++)
+	{
+		if (provjera(i) == true)
+			cout << i << endl;
+		
+	}
+	system("pause>0");
+}
+bool provjera(int br)
+{
+	int suma = 0, cifra, broj=br;
+	while (broj > 0)
+	{
+		cifra = broj % 10;
+		suma += faktorijel(cifra);
+		broj /= 10;
+	}
+	if (suma == br)
+		return true; 
+	else 
+		return false;
+}
+int faktorijel(int broj)
+{
+	int rez = 1;
+	for (int i = 1; i <=broj; i++)
+	{
+		rez *= i;
+	}
+	return rez;
+}

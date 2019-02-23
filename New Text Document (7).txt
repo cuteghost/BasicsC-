@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	long int n, faktorijel = 1, suma = 0;
+	cout << "Unesite broj n => ";
+	cin >> n;
+	for (int i = 1; i <= n; i += 2)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			faktorijel *= j;
+		}
+		if (faktorijel < 0)
+			faktorijel *= -1;
+
+		if (faktorijel % 7 != 0)
+			suma += faktorijel;
+		if (suma < 0)
+			suma *= -1;
+	}
+	cout << suma;
+	system("pause>0");
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1486982097 source:c:\users\dzevad\desktop\smislen\main.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+

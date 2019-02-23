@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+int Sumiraj(int);
+
+
+int main()
+{
+	int broj;
+	do
+	{
+		cout << "Unesite najmanje trocifren broj -> ";
+		cin >> broj;
+		system("cls");
+	} while (broj<100);
+
+	cout<<"Suma zadnje i prve cifre je -> "<<Sumiraj(broj);
+	system("pause>0");
+	return 0;
+
+}
+
+int Sumiraj(int broj)
+{
+	int zadnji, prvi, suma=0;
+	zadnji = broj % 10;
+	while (broj>0)
+	{
+		prvi = broj % 10;
+		broj /= 10;
+	}
+
+	return suma = zadnji + prvi;
+}

@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+/*Napišite program, poštujuci sve faze procesa programiranja koji omogucava da unese prirodni broj n i u slucaju da broj nije prost
+(broj koji je djeljiv samo sa 1 i sa samim sobom) potrebno ga je rastaviti na proste faktore.
+Svaki složeni broj se može rastaviti na proste faktore (brojeve) koji množenjem daju taj broj.
+Npr. broj	 48=2*2*2*2*3
+			 100=2*2*5*5
+			 60=2*2*3*5
+Upotrijebite funkcije:
+bool prost (int);
+void ispis (int);
+*/
+bool prost(int);
+void ispis(int);
+int main()
+{
+	int broj;
+	cin >> broj;
+	ispis(broj);
+	system("pause>0");
+
+}
+bool prost(int broj)//provjera da li je broj prost
+{
+	for (int i = 2; i <broj; i++)
+	{
+		if (broj%i == 0)
+			return false;
+	}
+	return true;
+}
+void ispis(int broj)
+{
+	int proizvod = 1;
+	if (prost(broj)==true)//ako je prost ispisi poruku
+		cout << "Broj je prost\n";
+	else//ako nije radi sledece
+	{
+		int i = 2; //djeljitelj
+		int brojcic = broj;
+		cout << broj << " = ";
+		while (broj>1)//dok god je broj veci od 1 jer eventualno prilikom djeljenja sa posljednjim djeljiteljem rezultat ce bit jedan i kraj petlje ce da bude
+		{
+
+			if (broj%i == 0)//provjeri da li je broj djeljiv sa djeljiteljem, ako jest racunaj proizvod, ispisi djeljitelj, i podijeli ga sa tim djeljiteljem
+			{
+				proizvod *= i;
+				broj /= i;
+				cout << i << " * ";
+			}
+			else// ako nije djeljiv povecaj djeljitelj za jedan broj
+				i++;
+			if (proizvod == brojcic) // u slucaju da je broj isti proizvodu prekini petlju
+				break;
+		}
+	}
+}
